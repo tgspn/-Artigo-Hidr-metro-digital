@@ -1,0 +1,55 @@
+
+\documentclass[
+	% -- opções da classe memoir --
+	article,			% indica que é um artigo acadêmico
+	11pt,				% tamanho da fonte
+	oneside,			% para impressão apenas no verso. Oposto a twoside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE % títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	sumario=tradicional
+	]{abntex2}
+	
+\usepackage[utf8]{inputenc}
+
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+% ---
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+\title{A utilização do hidrômetro digital na automação residencial de São Carlos}
+\author{
+    Leandro A. P. Gasparim \\
+    Lucas Ferreira Melo \\
+    Tiago Spana \\
+    Valmir Jean Zanchim \\
+}
+\date{2018}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+   
+    Com o grande avanço da tecnologia da Internet das coisas (IOT), é possível a construção de um sistema que dê mais transparência, controle  e além de conscientizar o cliente do seu consumo de água.
+    
+    Hoje é difícil tomar ciência do consumo de água, pois a leitura necessita ser feita de forma analógica e os cálculos tem que ser feito manualmente com auxilio de planilhas ou outras formas de anotações, já houve disponível no mercado um aplicativo que prometia fazer esse controle, porém, era necessário a interversão humana para o seu funcionamento, o que para um grande número de pessoas acaba sendo um empecilho efetuar esse controle.
+    
+    Esse artigo, tenta mensurar a viabilidade do desenvolvimento, além de mostrar as vantagens e desvantagem de um dispositivo que traria essa transparência do consumo ao cliente de uma maneira totalmente automatiza. 
+    
+\end{abstract}
+
+\section{Introdução}
+
+
+\end{document}
