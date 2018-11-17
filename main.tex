@@ -13,10 +13,12 @@
 	% -- opções do pacote babel --
 	english,			% idioma adicional para hifenização
 	brazil,				% o último idioma é o principal do documento
-	sumario=tradicional
+	sumario=tradicional,
+	doublespacing
 	]{abntex2}
-	
+
 \usepackage[utf8]{inputenc}
+\usepackage{setspace}
 
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
 \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
@@ -36,65 +38,104 @@
 }
 \date{}
 
+%\setSpacing{1.5}
+
 \begin{document}
 \maketitle
-
+\begin{DoubleSpace}
 \begin{abstract}
-   
-   Pensando em facilitar o cotidiano das pessoas, bem como dos profissionais que realizam os trabalhos de leitura do consumo de água. Frente à tecnologia e os recursos atualmente disponíveis, analisando a forma como esse tipo de equipamento e forma de trabalho sãos executados, o projeto apresenta um novo modelo de leitura do consumo de água, que permitirá, além do controle pelo próprio morador com leitura em tempo real, a automatização do processo de coleta desses dados por parte das concessionárias. Este novo modelo consistirá em um equipamento de medição com contadores micro-controlados, sistema embarcado e comunicação sem fio. Tudo isso permitirá que o próprio consumidor consulte seu consumo de água em tempo real, analise seu histórico de consumo e ainda identifique possíveis vazamentos mais facilmente. Já a concessionária, acessará estes dados da própria central através da INTERNET e, se não houver comunicação, um profissional poderá se deslocar e fazer a medição próximo do local, até mesmo dentro do próprio veículo.
-   Tendo em vista uma possível escassez de água pelo crescimento das cidades e consequentemente o maior desperdício, o consumo de água em residências e indústrias que tem sido alvo de políticas de conscientização e redução.  Este projeto visa mensurar a viabilidade do desenvolvimento e aplicação de um equipamento capaz de monitorar e fornecer dados do consumo de água. A fim de evitar o desperdício dos recursos natural e financeiro, além de apresentar as vantagens e desvantagens de um dispositivo que traria essa transparência do consumo ao cliente de uma maneira totalmente automatizada de operação.
+   Pensando em facilitar o cotidiano das pessoas, bem como dos profissionais que realizam os trabalhos de leitura do consumo de água. Frente à tecnologia e os recursos atualmente disponíveis, analisando a forma como esse tipo de equipamento e forma de trabalho sãos executados, o projeto apresenta um novo modelo de leitura do consumo de água, que permitirá, além do controle pelo próprio morador com leitura em tempo real, a automatização do processo de coleta desses dados por parte das concessionárias. Este novo modelo consistirá em um equipamento de medição com contadores micro-controlados, sistema embarcado e comunicação sem fio. Tudo isso permitirá que o próprio consumidor consulte seu consumo de água em tempo real, analise seu histórico de consumo e ainda identifique possíveis vazamentos mais facilmente. Já a concessionária, acessará estes dados da própria central através da Internet e, se não houver comunicação, um profissional poderá se deslocar e fazer a medição próximo do local, até mesmo dentro do próprio veículo.
+   Este projeto visa mensurar a viabilidade do desenvolvimento e aplicação de um equipamento capaz de monitorar e fornecer dados do consumo de água. A fim de evitar o desperdício dos recursos natural e financeiro, além de apresentar as vantagens e desvantagens de um dispositivo que traria essa transparência do consumo ao cliente de uma maneira totalmente automatizada de operação.
     
 \end{abstract}
 \newpage
+
 \section{Introdução}
 
-    Nos dias atuais, a leitura do consumo de água por parte da concessionária consiste no deslocamento de um profissional até as residências portando um PDA (assistente pessoal digital) para o lançamento do consumo de água. Muitas residências já possuem o hidrômetro posicionado de forma a facilitar o trabalho do leiturista, porém, ainda é possível encontrar residência com o hidrômetro de local de difícil acesso, e esses hidrômetros com difícil acesso podem ocasionar dificuldade na medição do consumo da água. Como por exemplo há moradias onde há animais ferozes que além de trazer risco para o profissional acaba sendo difícil o processo de medição. Outra preocupação é com o desgaste do profissional, onde, de baixo de chuva ou sol o trabalho deve ser realizado. 
+    Até o ano de 2018, a leitura do consumo de água por parte da concessionária consiste no deslocamento de um profissional até as residências portando um PDA (\textit{personal digital assistant}) para o lançamento do consumo de água. Muitas residências já possuem o hidrômetro posicionado de forma a facilitar o trabalho do leiturista, porém, ainda é possível encontrar moradias com o hidrômetro posicionado em local de difícil acesso. Como, por exemplo, quando há animais ferozes na residência que além de trazer risco para o profissional acaba atrapalhando o processo de medição. Outra preocupação é com o desgaste do profissional, que de baixo de chuva ou sol o trabalho deve ser realizado.
     
-    Quando a concessionária necessita realizar o corte do fornecimento de água, os problemas podem acabar sendo maiores, por conta que o morador pode passar a agir de forma violenta ou ameaçadora pondo em risco a vida do profissional. Um outro ponto a ser considerado é que quando a concessionária necessita realizar um racionamento, a mesma é obrigada a realizar a interrupção em todas as residencias, pois não há um meio viável de se realizar a interrupção individual de forma escalável.
+    Quando a concessionária necessita realizar o corte do fornecimento de água, os problemas podem ser maiores, por conta que o morador pode passar a agir de forma violenta ou ameaçadora pondo em risco a vida do profissional. Também deve ser considerado que quando a concessionária necessita realizar um racionamento, a mesma é obrigada a realizar a interrupção em todas as residencias, pois não há um meio viável de se realizar a interrupção individual de forma escalável.
     
-    Para o consumidor, as dificuldades são ainda maiores, pois mesmo querendo fazer o uso consciente da água, as dificuldades no controle e monitoramento do consumo o desestimula a fazer o acompanhamento dos seus gasto, sendo necessário esperar até a chegada da fatura, para tomar ciência do quanto conseguiu economizar no seu consumo. Além de que, havendo um vazamento de água, o mesmo só será detectado na próxima fatura, sendo impossível interromper o desperdício a tempo.
+    Para o consumidor, as dificuldades são ainda maiores, pois para gerenciar o seu consumo e fazer o uso consciente da água, as dificuldades no controle e monitoramento o desestimula a fazer o acompanhamento dos seus gastos, sendo necessário esperar até a chegada da fatura, para tomar ciência do quanto conseguiu economizar no seu consumo. Além do fato de haver, se houver um vazamento de água, o mesmo só será detectado na próxima fatura, e ainda a desagradável surpresa da conta de água mais cara.
     
-    A grande maioria desses problemas conseguimos solucionar de uma forma automatizada 
+    A maioria desses problemas é possível ser solucionada de forma automatizada utilizando as mais novas tecnologias que vem surgindo no mercado, assim como a Internet das Coisas (do inglês, \textit{Internet of Things, IoT}), que é uma tecnologia que está cada vez mais acessível e possibilitando uma transformação nos padrões de vida em sociedade \cite{martins2017gerenciamento}. 
+    Olhando para essa disponibilidade, faz-se possível a construção de sistemas que dê mais transparência e controle, além de conscientização ao cliente acerca do seu consumo de água \cite{decidades}.
+   
+    Diante desse contexto, os avanços em eletrônica e tecnologias da informação vêm aumentando seu apoio a diversas áreas e possibilitando melhorias na eficiência de diversos setores, onde o uso de dispositivos eletrônicos permite otimizar tarefas que ainda são executadas de forma precária e manual \cite{biegelmeyer2017desenvolvimento}.
     
-    Com o grande avanço e popularização da tecnologia \textbf{(evitem frases de efeito e genéricas aqui )}Internet das coisas (IOT), e a maneira como ela se torna mais acessível, possibilita uma transformação nos padrões de vida em sociedade. Olhando para essa disponibilidade, faz-se possível a construção de sistemas que dê mais transparência e controle, além de conscientização ao cliente acerca do seu consumo de água.
+    Assim, com acesso remoto ao hidrômetro é possível que a concessionário faça a regulagem ou até mesmo a interrupção no fornecimento quando houver a necessidade de efetuar um racionamento por conta de um estado crítico no reservatório de água, ou quando houver a necessidade de realizar o corte quando consumidor se encontra em débito com a concessionária. 
     
-    Diante desse contexto, os avanços em eletrônica e tecnologias da informação vêm aumentando seu apoio a diversas áreas e possibilitando melhorias na eficiência de diversos setores, onde o uso de dispositivos eletrônicos permite otimizar tarefas que ainda são executadas de forma precária e manual.
+    Já para o consumidor o seu consumo se torna mais transparente a medida que ele consiga ver em representações gráficos como está o seu consumo, assim, como se houve um aumento repentino do consumo de água, conseguindo assim identificar que pode ter algum vazamento, além, de se conscientizar a cerca do seu gasto de água.
     
-    Nesta nova era (evitar frases de efeito), onde as possibilidades são inúmeras e as ideias também. É necessário uma analise do que realmente pode ser significativo e de fato causar o impacto desejado e necessário para melhoria à qual foi proposto. (Esse parágrafo aqui está totalmente solto não liga nada com nada).
+    O profissional que faz a medição pode ser realocado para exercer outras atividades, pois como a concessionária consegue fazer a medição a distância, resulta em não ser mais necessário o deslocamento até as residências, exceto se houver alguma condição adversa.
+    \newpage
+\section{Referencial Teórico}
+    %Uma interrupção total do fornecimento de água, as vezes causa uma frustração nos usuário que se vê em uma situação sem solução, pois por parte da concessionária não houve um aviso prévio, como apresentado \cite{INOVA} acaba por não ser uma solução que não se preocupa com a experiência do usuário quando o mesmo apresenta o projeto com apenas a interrupção total. Já uma característica que pode ser aproveita aqui neste projeto é a possibilidade do usuário poder programar para um dia e horário específico a interrupção do seu próprio fornecimento e como melhoria permitir que o fornecimento possa ser 
+    %interrompido quando for conveniente. Além de permitir que o usário controle o seu próprio consumo, permite que a concessionária consiga notificar o usuário antes de fazer a interrupção total do fornecimento, assim como regular o fluxo quando houver uma condição crítica nos reservatórios.
     
-    Pessoal é necessário refazer a introdução e complementar as informações sugeridas. Do jeito que esta vocês não apresentam nem o problema e nem a solução do mesmo.
-\newpage
-\subsection{Justificativa}
+    
+    Esse projeto utiliza como base o artigo Controlando o consumo de água através da Internet utilizando Arduino de Pedro Grosskopf e Leandro Correa Pykosz. Neste artigo é apresentado algumas maneiras de melhorar o controle e o gerenciamento do consumo de água com a tecnologia IoT, utilizando as placas da plataforma de prototipagem eletrônica de código aberto Arduino para a coleta e manipulação da interrupção do fluxo de água do hidrômetro, também foi desenvolvido um portal na web para a gestão do consumo e controle do equipamento\cite{INOVA} de forma remota.
+    
+    Foi criado um protótipo onde ele faz a comunicação com um servidor hospedado na nuvem para armazenar os dados coletados do hidrômetro e para posteriormente ser consumido através do portal web, assim como também, o portal permite que o usuário faz a configuração do equipamento que é enviado por intermédio do servidor até o Arduino.
 
-Surgiu a necessidade de elaboração desse projeto de pesquisa para encontrar um melhor controle no consumo de água em residências urbanas alinhado na demora para coleta das informações dos hidrômetros convencionais pela empresa de serviço de água e esgoto na qual pode modelar os dados coletados em relatórios para tomadas de decisão, melhorias na qualidade da água e entrega
-de fornecimento aquífero. Evitando desperdícios e encontrando com mais agilidade vazamentos ou pontos de atenção e manutenção.
+\section{Justificativa}
 
-No Brasil, a hidro medição manual feita pelas empresas de saneamento atualmente dificulta o controle 
-pelo consumidor e consequentemente diminui o uso consciente da água.
-A ideia proposta visa a aplicação da tecnologia disponível nos dias atuais para essa medição
-e ajudar tanto o consumidor como também própria empresa de distribuição de água, fazendo com que o
-acesso a tal informação seja disponível para ambos, podendo controlar e verificar remotamente o consumo
-de água. 
+    Surgiu a necessidade de elaboração desse projeto de pesquisa para encontrar um melhor controle no consumo de água em residências urbanas alinhado na demora para coleta das informações dos hidrômetros convencionais pela empresa de serviço de água e esgoto na qual pode modelar os dados coletados em relatórios para tomadas de decisão, melhorias na qualidade da água e entrega
+    de fornecimento aquífero. Evitando desperdícios e encontrando com mais agilidade vazamentos ou pontos de atenção e manutenção  \cite{grosskopf2017controlando}.
+    
+    No Brasil, a hidro medição manual feita pelas empresas de saneamento atualmente dificulta o controle 
+    pelo consumidor e consequentemente diminui o uso consciente da água.
+    A ideia proposta visa a aplicação da tecnologia disponível nos dias atuais para essa medição
+    e ajudar tanto o consumidor como também própria empresa de distribuição de água, fazendo com que o
+    acesso a tal informação seja disponível para ambos, podendo controlar e verificar remotamente o consumo
+    de água. 
 
-\section{Objetivos}
+\section{Objetivo}
+\subsection{Objetivo Geral}
+O objetivo geral deste trabalho é definir a elaboração de um hidrômetro digital adequado às necessidades de monitoramento e propor um processo de medição dos recursos hídricos compatível com uma abordagem mais tecnológica no âmbito de Internet das Coisas, visando apoiar não só a concessionária de água e esgoto, como também o cliente residencial.
+
+\subsection{Objetivos Específicos}
+- Identificar os hidrômetros digitais mais utilizados, derivando os objetivos de medição atendidos por estes hidrômetros.
+
+- Definir diretrizes para definição de um processo de coleta de informação respeitando os limites de comunicação e tecnologia disponíveis.
+
+- Propor uma forma de análise e monitoramento contínuo das informações coletadas para observar a performance e diferenças entre o hidrômetro digital e o analógico.
+
+Os pesquisadores não têm a pretensão de esgotar o estudo sobre o assunto, porém contribuir com esclarecimento e organização compatível com a abordagem de desenvolvimento de hidrômetros digitais.
 
 \section{Plano de trabalho}
 \subsection{Cronograma}
-
+    \begin{table}[hbt!]
+    \begin{tabular}{|l|c|c|c|c|}
+    \hline
+    \multicolumn{1}{|c|}{\textbf{Etapas}} & \textbf{Agosto} & \textbf{Setembro} & \textbf{Outubro} & \textbf{Novembro} \\ \hline
+    \textbf{Levantamento Bibliográfico} & \textbf{X} & \textbf{} & \textbf{} & \textbf{} \\ \hline
+    \textbf{Análise de textos} & \textbf{} & \textbf{X} & \textbf{} & \textbf{} \\ \hline
+    \textbf{Análise de fontes} & \textbf{} & \textbf{X} & \textbf{} & \textbf{} \\ \hline
+    \textbf{Roteiro} & \textbf{} & \textbf{} & \textbf{X} & \textbf{} \\ \hline
+    \textbf{Revisão} & \textbf{} & \textbf{} & \textbf{} & \textbf{X} \\ \hline
+    \textbf{Entrega} & \textbf{} & \textbf{} & \textbf{} & \textbf{X} \\ \hline
+    \end{tabular}
+    \end{table}
+    
 \section{Material e métodos}
+\subsection{Metodologia}
+
+O trabalho em questão é realizado com base na análise de artigos já desenvolvidos sobre o tema IoT, que utilizam dispositivos eletrônicos combinados à sensores de fluxo e sistemas para análise dos dados coletados, e assim formam um hidrômetro digital. Tendo em vista como cenário de aplicação inicial e principal a cidade de São Carlos - SP e mensurando a viabilidade deste equipamento trazer benefícios não só para a concessionária de água esgoto, mas também aos clientes.
+Partindo-se da premissa de que é possível desenvolver um processo de medição do consumo hídrico residencial utilizando-se de hidrômetros digitais e, que a apresentação detalhada de um conjunto de informações coletadas irão auxiliar na gestão hídrica como um todo.
 
 \section{Forma de análise dos resultados}
+\subsection{O hidrômetro}
+Será levantado o investimento feito para automatizar o processo e as tecnologias utilizadas, bem como testes e comparações com o hidrômetro tradicional.
 
+\subsection{Análises}
+Uma análise da viabilidade sobre a implementação do conceito será feita a partir de questionários aplicados ao público de São Carlos e também para definir qual a aceitação da população.
 
+\section{Considerações Finais}
+Analisando a proposta deste projeto, juntamente com o embasamento e comparativos analisados nos materiais de referência, conclui-se que há uma potencial viabilidade em sua construção e aplicação. Mesmo com as dificuldades, dentro das particularidades abordadas em cada projeto já desenvolvido, a complementação de uma ideia pela outra torna facilmente solúvel as dificuldades dentro do cenário inicial proposto, sendo este a cidade de São Carlos.
 
+\end{DoubleSpace}
+\newpage
+\bibliography{referencias}
 
-%-- objetivo
-
-% -- justificativa
-
-% referencial
-
-%até 04/10
-    
- 
 \end{document}
